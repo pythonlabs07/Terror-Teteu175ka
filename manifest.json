@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "O Terror do Podrão",
+  "short_name": "Terror do Podrão",
+  "description": "Um jogo de terror e fuga em que você precisa se esconder, encontrar dinheiro e escapar dos perseguidores.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

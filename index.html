@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="theme-color" content="#050505">
-<title>Terror do 175ka — Capítulo 2</title>
+<meta name="description" content="O Terror do Podrão — jogo de terror e fuga.">
+<meta name="application-name" content="O Terror do Podrão">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="O Terror do Podrão">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+
+<title>O Terror do Podrão — Capítulo 2</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030303;color:#fff;font-family:Arial,Helvetica,sans-serif;touch-action:none}
@@ -130,6 +140,7 @@ url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAA
 #mazeControls.freeLook #back{left:86px;bottom:30px}
 
 </style>
+<meta name="app-version" content="4-black-screen-fix">
 </head>
 <body>
 <div id="app">
@@ -137,7 +148,7 @@ url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAA
 
 <section id="menu" class="screen active">
   <div class="menuBox">
-    <h1 class="title">Terror do 175ka</h1>
+    <h1 class="title">O Terror do Podrão</h1>
     <div class="sub">O PODRÃO DE 10 CONTO • CAPÍTULO 2</div>
     <button class="menuBtn" id="start1">JOGAR DO INÍCIO</button>
     <button class="menuBtn" id="start2">TESTAR CAPÍTULO 2</button>
@@ -332,7 +343,7 @@ function startFootsteps(volume=.18){
 }
 
 function stopFootsteps(){
-  stopFootsteps();
+  stopAudio(fx.passos);
 }
 
 function stopScareSounds(){
@@ -984,5 +995,16 @@ menuMusic();
 requestAnimationFrame(loop);
 })();
 </script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js", { updateViaCache: "none" })
+      .then(reg => reg.update())
+      .catch(err => console.log("Service Worker:", err));
+  });
+}
+</script>
+
 </body>
 </html>
